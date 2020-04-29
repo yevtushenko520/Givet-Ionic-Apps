@@ -1,0 +1,82 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{loginData.title}}</ion-title>
+
+   
+  </ion-navbar>
+</ion-header>
+<ion-content style="
+background-color: #fff;">
+    <ion-list >   
+            
+      <div text-center style="
+        background-color: #fff;">
+
+        <img class="goga" *ngIf=" test != null && res_image ==null" src="{{image}}">
+        <img class="goga" *ngIf=" test == null && res_image ==null" src="https://givet.co.uk/backend/web/images/{{image}}">
+        <img class="goga" *ngIf="res_image !=null" src = "{{base64Image}}"/>
+
+    </div>
+     
+
+    <ion-item>
+        <button  ion-button icon-end (click)="openModal()">
+            {{update_image_lang}}
+            <ion-icon name="cloud-download"></ion-icon>
+          </button>
+
+         
+        </ion-item>
+      <ion-item>
+        <ion-icon name="ios-person" ></ion-icon>
+        <ion-label  color="primary" stacked>
+            {{title_lang}} *
+        </ion-label>
+          <ion-input type="text" [(ngModel)]="loginData.title"  placeholder="{{title_lang}} "></ion-input>
+        
+      </ion-item>
+      
+      <ion-item>
+        <ion-label  color="primary" stacked>{{type_lang}} *</ion-label>
+          <ion-select [(ngModel)]="loginData.type" placeholder="{{type_lang}} ">
+            <ion-option [selected]="loginData.type == 0" value="0">Private</ion-option>
+            <ion-option [selected]="loginData.type == 1"  value="1">Shared</ion-option>
+            <ion-option [selected]="loginData.type == 2"  value="2">Public</ion-option>
+          </ion-select>
+        </ion-item>
+
+      <ion-item>
+          <ion-icon name="password" ></ion-icon>
+          <ion-label  color="primary" stacked>
+              {{private_lang}} *
+          </ion-label>
+            <ion-textarea type="text" [(ngModel)]="loginData.private"  placeholder="{{private_lang}} "></ion-textarea>
+          
+        </ion-item>
+  
+        <ion-item>
+            <ion-icon name="person" ></ion-icon>
+            <ion-label   color="primary" stacked>
+                {{desc_lang}} *</ion-label>
+             
+              <ion-textarea  type="text" [(ngModel)]="loginData.desc" placeholder="{{desc_lang}} " rows="4"></ion-textarea >
+                
+          </ion-item>
+  
+
+
+
+            <button ion-button full (click)="save()">{{updates}}</button>
+            
+
+
+              
+  
+              <ion-item>
+
+              
+              </ion-item>
+              
+    </ion-list>
+  </ion-content>

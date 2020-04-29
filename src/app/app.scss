@@ -1,0 +1,106 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.toolbar-md-title-text-color{
+    color: white;
+} 
+.tabs-ios .tab-button[aria-selected=true] 
+.tab-button-icon
+{
+    color: #ffffff;
+  }
+
+  
+  .tabbar .tab-button[aria-selected=true] {
+    background-color: #600051; 
+    border-color: transparent;
+}
+
+
+ 
+.tabbar .tab-button {
+    
+    background-color: #600051; 
+    border-left: 0px solid #000;
+    border-right: 0px solid #000;
+    color: #FFF;
+}
+.tabs-md .tab-button {
+    min-height: 5.6rem;
+    font-weight: 400;
+    color: #8c8c8c;
+    padding: 0;
+}
+
+.tabs-ios .tab-button {
+    max-width: 240px;
+    min-height: 49px;
+    font-size: 10px;
+    font-weight: 500;
+    color: #8c8c8c;
+    padding: 0 2px;
+}
+
+.tabs-md .tab-button-icon {
+    margin-top: 1px;
+    min-width: 2.4rem;
+    font-size: 2.4rem;
+    color: #8c8c8c; 
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    -webkit-transform-origin: 50% 150%;
+    transform-origin: 50% 150%;
+}
+
+
+.has-refresher > .scroll-content {
+    margin-top: -1px;
+     border-top: 0px solid #ddd; 
+    -webkit-transition: -webkit-transform 320ms cubic-bezier(0.36, 0.66, 0.04, 1);
+    transition: -webkit-transform 320ms cubic-bezier(0.36, 0.66, 0.04, 1);
+    transition: transform 320ms cubic-bezier(0.36, 0.66, 0.04, 1);
+    transition: transform 320ms cubic-bezier(0.36, 0.66, 0.04, 1), -webkit-transform 320ms cubic-bezier(0.36, 0.66, 0.04, 1);
+}
+
+
+ion-content.has-refresher > .scroll-content {
+    background-color: transparent;
+}
+
+.text-input{
+    
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: grey;
+    padding: 5px;
+}
+.select{
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: grey;
+}
+.select-placeholder{
+    padding: 5px;
+}
+.datetime{
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: grey;
+}
+

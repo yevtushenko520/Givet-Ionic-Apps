@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-navbar>
+      <ion-buttons >
+        
+      </ion-buttons>
+      <ion-title>Create Event</ion-title>
+  
+      
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content >
+    
+  
+    <ion-list >   
+
+      <ion-item>
+          <ion-icon name="ios-person" ></ion-icon>
+          <ion-label  color="primary" stacked>
+            {{lang}} *
+          </ion-label>
+      
+            <ion-input type="text"  [(ngModel)]="loginData.name"  placeholder="{{lang}} "></ion-input>
+        
+        </ion-item>
+
+        <ion-item>
+            <ion-icon name="person" ></ion-icon>
+            <ion-label  color="primary" stacked>
+              {{desc}} *
+            </ion-label>
+              <ion-textarea  type="text"  [(ngModel)]="loginData.desc" placeholder="{{desc}} " rows="4"></ion-textarea >
+            
+          </ion-item>
+
+  
+          <ion-item>
+              <ion-icon name="person" ></ion-icon>
+              <ion-label  color="primary" stacked>
+                {{date_eng}} *
+              </ion-label>
+
+
+                <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="loginData.date"  max="2050" placeholder="{{date_eng}} "></ion-datetime>
+              
+            
+
+            </ion-item>
+
+
+            <ion-item>
+                <ion-icon name="person" ></ion-icon>
+                <ion-label color="primary" stacked>
+                  {{time_eng}} *
+                </ion-label>
+               
+                  <ion-datetime displayFormat="h:mm A"  [(ngModel)]="loginData.time" pickerFormat="h mm A" placeholder="{{time_eng}} "></ion-datetime>
+                  
+                
+              </ion-item>
+
+              <ion-item>
+                <ion-label  color="primary" stacked >Repeat</ion-label>
+                  <ion-select  [(ngModel)]="loginData.rap" placeholder="Repeat *">
+                    <ion-option value="0">Weekly</ion-option>
+                    <ion-option value="1">Monthly</ion-option>
+                    <ion-option value="2">Yearly</ion-option>
+                    <ion-option value="3">One Time</ion-option>
+                  </ion-select>
+                </ion-item>
+  
+
+              
+
+                  <button ion-button full (click)="save()">Create</button>
+              
+           
+    
+      
+  
+              
+
+              <ion-item>
+
+              
+              </ion-item>
+  
+    </ion-list>
+  </ion-content>
+  

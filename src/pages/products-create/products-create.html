@@ -1,0 +1,194 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons >
+      
+    </ion-buttons>
+    <ion-title >{{create_prod}}</ion-title>
+  
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+  
+
+  <ion-list style="
+  background-color: #fff;" >   
+          
+      <div text-center style="
+        background-color: #fff;">
+           <img src = "{{base64Image}}"/>
+  </div>
+
+        <ion-item>
+            <ion-icon name="person" ></ion-icon>
+            <ion-label  color="primary" stacked>
+             {{image_eng}}
+            </ion-label>
+            
+
+          </ion-item>          
+
+          <ion-item>
+              <button  ion-button icon-end (click)="openModal()">
+                    {{update_image_eng}}
+                  <ion-icon name="cloud-download"></ion-icon>
+                </button>
+
+               
+              </ion-item>
+
+        <ion-item>
+            <ion-icon name="ios-person" ></ion-icon>
+            <ion-label  color="primary" stacked>
+              {{link_eng}} *</ion-label>
+              <ion-input type="text" [(ngModel)]="loginData.buy" placeholder="{{link_eng}} "></ion-input>
+            
+              
+              
+          </ion-item>
+          <ion-item>
+          <button ion-button style="background-color: darkcyan;color: cornsilk" (click)="search()">{{fetch_eng}}</button>
+
+        </ion-item>
+    <ion-item>
+      <ion-icon name="ios-person" ></ion-icon>
+      <ion-label  color="primary" stacked>
+            {{title_eng}} *</ion-label>
+        <ion-input type="text" [(ngModel)]="loginData.title" placeholder="{{title_eng}} "></ion-input>
+      
+    </ion-item>
+
+    <ion-item>
+        <ion-icon name="ios-person" ></ion-icon>
+        <ion-label  color="primary" stacked>
+            {{name_eng}} *
+          </ion-label>
+        
+          <ion-input type="text" [(ngModel)]="loginData.name" placeholder="{{name_eng}} "></ion-input>
+      
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="ios-person" ></ion-icon>
+        <ion-label  color="primary" stacked>
+          {{where_buy_eng}} * </ion-label>
+          <ion-input type="text" [(ngModel)]="loginData.were" placeholder="{{where_buy_eng}} "></ion-input>
+      
+      </ion-item>
+
+
+      <ion-item>
+          <ion-icon name="ios-person" ></ion-icon>
+          <ion-label  color="primary" stacked>
+           {{price_eng}} *</ion-label>
+            <ion-input type="text" [(ngModel)]="loginData.price" placeholder="{{price_eng}} "></ion-input>
+         
+        </ion-item>
+
+
+
+    <ion-item>
+          <ion-icon name="ios-person" ></ion-icon>
+          <ion-label  color="primary" stacked>
+            {{quantity_eng}} *</ion-label>
+            <ion-input type="number" [(ngModel)]="loginData.quan"  placeholder="{{quantity_eng}} "></ion-input>
+          
+        </ion-item>
+
+        <ion-item>
+            <ion-label  color="primary" stacked>{{prod_cat_eng}}</ion-label>
+              <ion-select     [(ngModel)]="loginData.rap" placeholder="Category *" >
+                <ion-option   [value]="8" (ionSelect)="clickOption(8)" >For Him</ion-option>
+                <ion-option   [value]="9" (ionSelect)="clickOption(9)">For Her</ion-option>
+                <ion-option   [value]="10"(ionSelect)="clickOption(10)" >For Boys</ion-option>
+                <ion-option   [value]="11" (ionSelect)="clickOption(11)">For Girls</ion-option>
+                <ion-option   [value]="12" (ionSelect)="clickOption(12)">Arts and Crafts</ion-option>
+                <ion-option   [value]="13"(ionSelect)="clickOption(13)" >Bridal Party</ion-option>
+                <ion-option   [value]="14" (ionSelect)="clickOption(14)">Collectibles</ion-option>
+              </ion-select>
+            </ion-item>
+
+    <ion-item>
+        <ion-icon name="person" ></ion-icon>
+        <ion-label   color="primary" stacked>
+          {{desc_eng}} *</ion-label>
+       
+          <ion-textarea  type="text"  [(ngModel)]="loginData.info" placeholder="Description " rows="4"></ion-textarea >
+            
+          
+      </ion-item>
+
+    
+      <ion-item>
+        <p  style="color:#488aff;">
+          {{rating_eng}} *
+        </p>
+        <ionic3-star-rating  *ngIf=" rating == '0' || rating ==null "
+        activeIcon = "ios-star"
+        defaultIcon = "ios-star-outline"
+        activeColor = "orange" 
+        defaultColor = "grey"
+        readonly="false"
+        [rating]="0">
+    </ionic3-star-rating>
+    <ionic3-star-rating  *ngIf=" rating == '1'"
+        activeIcon = "ios-star"
+        defaultIcon = "ios-star-outline"
+        activeColor = "orange" 
+        defaultColor = "grey"
+        readonly="false"
+        [rating]="1">
+    </ionic3-star-rating>
+    <ionic3-star-rating  *ngIf=" rating == '2'"
+        activeIcon = "ios-star"
+        defaultIcon = "ios-star-outline"
+        activeColor = "orange" 
+        defaultColor = "grey"
+        readonly="false"
+        [rating]="2">
+    </ionic3-star-rating>
+    <ionic3-star-rating  *ngIf=" rating == '3'"
+        activeIcon = "ios-star"
+        defaultIcon = "ios-star-outline"
+        activeColor = "orange" 
+        defaultColor = "grey"
+        readonly="false"
+        [rating]="3">
+    </ionic3-star-rating>
+    <ionic3-star-rating  *ngIf=" rating == '4'"
+        activeIcon = "ios-star"
+        defaultIcon = "ios-star-outline"
+        activeColor = "orange" 
+        defaultColor = "grey"
+        readonly="false"
+        [rating]="4">
+    </ionic3-star-rating>
+    <ionic3-star-rating  *ngIf=" rating == '5'"
+        activeIcon = "ios-star"
+        defaultIcon = "ios-star-outline"
+        activeColor = "orange" 
+        defaultColor = "grey"
+        readonly="false"
+        [rating]="5">
+    </ionic3-star-rating>
+    </ion-item>
+
+
+
+
+        <button ion-button full (click)="save()">{{create_new_eng}}</button>
+          
+
+
+            
+
+            <ion-item>
+
+              
+            </ion-item>
+
+  </ion-list>
+
+ 
+</ion-content>

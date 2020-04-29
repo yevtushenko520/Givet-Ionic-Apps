@@ -1,0 +1,55 @@
+page-setting-profile {
+    .user-photo ion-avatar {
+        margin: 0 auto;
+        width: 100px;
+        height: 100px;
+      }
+    
+      
+  
+    .img_prof{
+      background-color: #fff;
+      padding-top: 5px;
+    }
+
+    .list {
+      padding: 5px 0;
+      padding-top: 0px;
+  }
+
+  .goga{
+    display: block;
+  margin-left: auto;
+  margin-right: auto ;
+  }
+ 
+.button{
+  margin: 0px;
+  
+}
+.text-input{
+  
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: grey;
+    padding: 5px;
+}
+.select{
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: grey;
+}
+
+.datetime{
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: grey;
+}
+
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+  border-bottom-color: #32db64;
+  -webkit-box-shadow: inset 0 0px 0 0 #32db64;
+  box-shadow: inset 0 0px 0 0 #32db64;
+}
+
+}

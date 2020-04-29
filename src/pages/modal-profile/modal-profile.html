@@ -1,0 +1,130 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>
+          {{name}}
+      </ion-title>
+      <ion-buttons start>
+        <button ion-button (click)="dismiss()">
+          <span ion-text color="primary" showWhen="ios">Cancel</span>
+          <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-list>
+        <ion-item>
+          <ion-avatar item-start>
+              <img class="goga" *ngIf=" test != null" src="{{image}}">
+              <img class="goga" *ngIf=" test == null" src="https://givet.co.uk/backend/web/images/users/{{image}}">
+          </ion-avatar>
+          <h2>{{name}} {{surename}}</h2>
+          <p>{{email}}</p>
+          
+          <div *ngIf="ides!=user_id_2">
+          <button *ngIf="status == null && status_friend ==null" ion-button color="secondary" (click)="AddNew()">Add to Friend </button>
+          <button *ngIf="status == '2'" ion-button style="background-color: #f39c12" (click)="NotWait()">Stop Waiting...</button>
+          <button *ngIf="status_friend == '2'" ion-button color="secondary" (click)="AllAccess()">Add Friend </button>
+          <button *ngIf="status == '1'" ion-button color="danger" (click)="leav()">Remove Friend</button>
+          <button *ngIf="status == '3'" ion-button style="background-color: #f39c12" (click)="Unsibr()">Unsubscribe</button>
+          <button *ngIf="status_friend == '2'" ion-button color="danger" (click)="DontAdd()">Don't Add</button>
+          <button *ngIf="status_friend == '3'" ion-button color="secondary" (click)="AddOldFriend()">Add to Friend </button>
+        </div>
+
+        </ion-item>
+  
+        <ion-item>
+            <ion-icon name="person" ></ion-icon>
+            <ion-label>
+              <p>{{phone_eng}}</p>
+            
+              <h2>{{phone}}</h2>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+              <ion-icon name="person" ></ion-icon>
+              <ion-label>
+                  <p>{{bithday_eng}}</p>
+                <h2>{{bithday}}</h2>
+              </ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="person" ></ion-icon>
+                <ion-label>
+                    <p>{{home_adress_eng}}</p>
+                  <h2>{{home_adress}}</h2>
+                </ion-label>
+              </ion-item>
+              <ion-item>
+                  <ion-icon name="person" ></ion-icon>
+                  <ion-label>
+                      <p>{{mail_adress_eng}}</p>
+                    <h2>{{mail_adress}}</h2>
+                  </ion-label>
+                </ion-item>
+
+                <button ion-item (click)="moveToGiftProfile(ides)"> 
+                    <ion-icon ios="ios-briefcase" md="md-briefcase" item-start></ion-icon>
+                    {{gift_eng}}
+                  </button>
+    
+
+                  <button  ion-item (click)="moveToFriendsPage(ides)">
+                      <ion-icon name="man" item-start></ion-icon>
+                      {{friends_eng}}
+                      <ion-badge item-end>{{friends}}</ion-badge>
+                    </button>
+
+                  
+
+                    <button ion-item (click)="moveToGroupPage(ides)">
+                        <ion-icon name="people" item-start></ion-icon>
+                        {{groups_eng}}
+                        <ion-badge item-end>{{groups}}</ion-badge>
+                      </button>
+
+                      <button ion-item (click)="moveToWishList(ides)">
+                          <ion-icon name="bowtie" item-start></ion-icon>
+                          {{wishlist_eng}}
+                          <ion-badge item-end>{{wishlist}}</ion-badge>
+                        </button>
+
+                        <button  ion-item (click)="moveToEvents(ides)">
+                            <ion-icon name="bookmarks" item-start></ion-icon>
+                            {{events_lang}}
+                            <ion-badge item-end>{{events}}</ion-badge>
+                          </button>
+
+                          <button  ion-item (click)="moveToProducts()"> 
+                            <ion-icon name="briefcase" item-start></ion-icon>
+                            {{product_eng}}
+                            <ion-badge item-end>{{products}}</ion-badge>
+                          </button>
+
+
+                          <button ion-item (click)="moveToFav(ides)">
+                            <ion-icon ios="ios-bulb" md="md-bulb" item-start></ion-icon>
+                            {{fav_list_eng}}
+                            <ion-badge item-end>{{fav_list}}</ion-badge>
+                          </button>
+
+
+                    <ion-item text-center>
+                        <div class="soc_type">
+                         
+
+                            <a href="{{fb}}" > <img *ngIf=" fb != '' && fb != null" style="width: 30px;" src="assets/imgs/facebook.png"></a>
+                            <img *ngIf=" fb == '' || fb == null"  style="opacity: 0.5; width: 30px;" src="assets/imgs/facebook.png">
+                            <img *ngIf=" google == '' || google ==null"  style="opacity: 0.5;width: 30px;" src="assets/imgs/google-plus.png">
+                            <a href="{{google}}">   <img *ngIf=" google != '' &&  google !=null "   style="width: 30px;" src="assets/imgs/google-plus.png"></a>
+            
+            
+                            <a href="{{inst}}">  <img *ngIf=" inst != '' && inst != null"  style="width: 30px;" src="assets/imgs/instagram.png"></a>
+                            <img *ngIf=" inst == '' || inst == null"  style="opacity: 0.5;width: 30px;" src="assets/imgs/instagram.png">
+                            <a href="{{twit}}">  <img *ngIf=" twit != '' && twit != null"  style="width: 30px;" src="assets/imgs/twitter.png"></a>
+                            <img *ngIf=" twit == '' || twit == null"  style="opacity: 0.5;width: 30px;" src="assets/imgs/twitter.png">
+                        </div>
+                      </ion-item>
+    </ion-list>
+  </ion-content>

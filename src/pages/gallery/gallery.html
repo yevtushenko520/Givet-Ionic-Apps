@@ -1,0 +1,44 @@
+<!--
+  Generated template for the GalleryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+      <ion-buttons >
+        
+      </ion-buttons>
+      <ion-title>Gallery</ion-title>
+    
+    </ion-navbar>
+  </ion-header>
+
+
+
+<ion-content >
+
+
+
+    <ion-list>
+
+        <ion-col *ngFor="let item of items"  no-padding>
+      
+      
+          <ion-card (click)="moToView(item)">
+              <img *ngIf="item.image!=null" src="https://givet.co.uk/backend/web/images/users/{{item.image}}"/>
+              <img *ngIf="item.image==null" src="https://givet.co.uk/backend/web/images/default-250x250.png"/>
+              <ion-card-content>
+               
+                <p  [innerHtml]="item.desc ">
+                 
+                </p>
+              </ion-card-content>
+      
+             
+            </ion-card>
+      
+          </ion-col>
+          
+      </ion-list>
+</ion-content>

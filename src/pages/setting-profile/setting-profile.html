@@ -1,0 +1,120 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{set_profile}}</ion-title>
+
+  
+  </ion-navbar>
+
+  </ion-header>
+  
+  <ion-content >
+    
+
+    <ion-list >
+       
+            <ion-avatar class="img_prof" >
+               
+         
+              
+              <img *ngIf="image == null " src="https://givet.co.uk/backend/web/images/default-250x250.png"/>
+              <img *ngIf=" test == null && res_image ==null" src="https://givet.co.uk/backend/web/images/users/{{image}}">
+              <img *ngIf="res_image !=null" src = "{{base64Image}}"/>
+
+              </ion-avatar>
+              <ion-item>
+                  <button  ion-button icon-end (click)="openModal()">
+                      {{update_image_eng}}
+                      <ion-icon name="cloud-download"></ion-icon>
+                    </button>
+    
+                  
+                  </ion-item>
+      <ion-item>
+        <ion-icon name="ios-person" ></ion-icon>
+       
+        <ion-label  color="primary" stacked>
+            {{first_name_eng}} *
+          </ion-label>
+       
+
+          <ion-input type="text" [(ngModel)]="loginData.name"  placeholder="{{first_name_eng}} "></ion-input>
+        
+      </ion-item>
+
+
+      <ion-item>
+          <ion-icon name="ios-person" ></ion-icon>
+          <ion-label  color="primary" stacked>
+              {{last_name_eng}} *
+          </ion-label>
+            <ion-input type="text" [(ngModel)]="loginData.surename"  placeholder=" {{last_name_eng}} "></ion-input>
+          
+        </ion-item>
+      
+      <ion-item>
+        <ion-icon name="mail" ></ion-icon>
+        <ion-label  color="primary" stacked>
+            {{email_eng}} *
+        </ion-label>
+          <ion-input type="text" [(ngModel)]="loginData.email"  placeholder=" {{email_eng}} "></ion-input>
+        
+      </ion-item>
+
+      <ion-item>
+          <ion-icon name="password" ></ion-icon>
+          <ion-label  color="primary" stacked>
+              {{pass_eng}} *
+          </ion-label>
+            <ion-input type="text" [(ngModel)]="loginData.password" placeholder="{{pass_eng}} "></ion-input>
+          
+        </ion-item>
+  
+      <ion-item>
+          <ion-icon name="person" ></ion-icon>
+          <ion-label  color="primary" stacked>
+              {{number_eng}}
+          </ion-label>
+         
+            <ion-input type="text" [(ngModel)]="loginData.phone"  placeholder="{{number_eng}}"></ion-input>
+           
+        </ion-item>
+        <ion-item>
+            <ion-icon name="person" ></ion-icon>
+            <ion-label  color="primary" stacked>
+                {{bith_eng}} *
+            </ion-label>
+       
+              <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="loginData.bithday" placeholder="{{loginData.bithday}} "></ion-datetime>
+              
+
+          </ion-item>
+          <ion-item>
+              <ion-icon name="person" ></ion-icon>
+              <ion-label   color="primary" stacked>
+                  {{home_eng}}
+              </ion-label>
+              
+                <ion-input type="text"  [(ngModel)]="loginData.home_adress" placeholder="{{home_eng}}"></ion-input>
+                
+            </ion-item>
+            <ion-item>
+                <ion-icon name="person" ></ion-icon>
+                <ion-label  color="primary" stacked>
+                    {{mail_eng}}
+                </ion-label>
+              
+                  <ion-input type="text"  [(ngModel)]="loginData.mail_adress" placeholder="{{mail_eng}}"></ion-input>
+                
+              </ion-item>
+  
+              <button ion-button full (click)="save()">{{updates}}</button>
+
+              <ion-item>
+
+              
+            </ion-item>
+  
+    </ion-list>
+  </ion-content>
+  

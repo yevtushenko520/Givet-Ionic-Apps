@@ -1,0 +1,76 @@
+<!--
+  Generated template for the FriendsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+
+
+    <ion-navbar>
+        <ion-title *ngIf="!searchBar">
+            Users
+            </ion-title>
+  
+            <ion-searchbar *ngIf="searchBar" showCancelButton="true" (ionCancel)="cancelSearch()" [(ngModel)]="queryText"
+            (ionInput)="updateText($event)"></ion-searchbar>
+        
+            <ion-buttons end>
+              <button ion-button icon-only *ngIf="!searchBar" (click)="searchBar=true">
+              <ion-icon name="search"></ion-icon>
+            </button>
+            </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+
+
+
+<ion-content>
+
+    <ion-list *ngIf="items == null" text-center>
+
+        <p  style=" color: antiquewhite" >All friends are already in the group or you have no friends.</p>
+    
+    
+      </ion-list>
+
+    <ion-list *ngIf="items != null " >
+
+        <ion-col *ngFor="let item of items;"  no-padding>
+
+        <ion-card>
+
+            <ion-item>
+              <ion-avatar item-start>
+                <img src="https://givet.co.uk/backend/web/images/users/{{item.image}}">
+              </ion-avatar>
+              <button ion-button icon-start clear item-end>
+                  
+                </button>
+              <h2>{{item.name}} {{item.surename}}</h2>
+              <p>{{item.email}}</p>
+              <p>{{item.bithday}}</p>
+              <p>{{item.phone}}</p>
+
+             
+              
+            </ion-item>
+           
+
+          <ion-item> 
+            <button *ngIf="item.status == '1' " ion-button>Waiting...</button>
+
+            <button *ngIf="item.status == '2' " ion-button>In Group</button>
+
+<button ion-button color="secondary" *ngIf="item.status == '0' " (click)="addUser(item)">Add to group</button>
+
+</ion-item>
+
+            </ion-card>
+
+          </ion-col>
+    </ion-list >
+
+</ion-content>

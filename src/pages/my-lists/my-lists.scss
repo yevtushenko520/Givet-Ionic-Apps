@@ -1,0 +1,26 @@
+page-my-lists {
+    .fixline{
+        height: auto;
+        margin-bottom: 7px;
+    }
+}
+
+.no-mg{
+    padding-top:0px
+}
+.bot-pd{
+    padding-bottom: 5px;
+}
+
+.checked {
+    color: orange;
+}
+.uncheck {
+    color: #808080;
+}
+.label-warning{
+    background-color: #f39c12 !important;
+    color: #fff;
+    border-radius: .25em;
+}
+

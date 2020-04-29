@@ -1,0 +1,148 @@
+<!--
+  Generated template for the WishlistViewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ (loginData.title | slice:0:15) + (loginData.title.length > 15 ? '...' : '')}} </ion-title>
+
+    <ion-buttons *ngIf=" user_id == user_id_2" end>
+        <button ion-button icon-only (click)="moToCreate(ids)">
+          <ion-icon name="ios-create-outline"></ion-icon>
+        </button>
+
+        <button ion-button icon-only (click)="presentConfirm(ids)">
+            <ion-icon name="trash" ></ion-icon>
+          </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+
+
+<ion-content >
+
+
+    <ion-card>
+
+        <ion-item>
+         
+          <h2>{{name}}</h2>
+          <p>{{title}}</p>
+          <ion-card-header *ngIf=" rating == '0'" class="no-mg" style="
+          padding-left: 0px;
+          padding-bottom: 5px;
+      ">
+              <ion-icon name="star" class=" unchecked"></ion-icon>
+              <ion-icon name="star" class=" unchecked"></ion-icon>
+              <ion-icon name="star" class=" unchecked"></ion-icon>
+              <ion-icon name="star" class=" uncheck"></ion-icon>
+              <ion-icon name="star" class=" uncheck"></ion-icon>
+            </ion-card-header>
+
+            <ion-card-header *ngIf=" rating == '1'" class="no-mg" style="
+          padding-left: 0px;
+          padding-bottom: 5px;
+      ">
+              <ion-icon name="star" class=" checked"></ion-icon>
+              <ion-icon name="star" class=" unchecked"></ion-icon>
+              <ion-icon name="star" class=" unchecked"></ion-icon>
+              <ion-icon name="star" class=" uncheck"></ion-icon>
+              <ion-icon name="star" class=" uncheck"></ion-icon>
+            </ion-card-header>
+
+            <ion-card-header *ngIf=" rating == '2'" class="no-mg" style="
+          padding-left: 0px;
+          padding-bottom: 5px;
+      ">
+              <ion-icon name="star" class=" checked"></ion-icon>
+              <ion-icon name="star" class=" checked"></ion-icon>
+              <ion-icon name="star" class=" unchecked"></ion-icon>
+              <ion-icon name="star" class=" uncheck"></ion-icon>
+              <ion-icon name="star" class=" uncheck"></ion-icon>
+            </ion-card-header>
+
+            <ion-card-header *ngIf=" rating == '3'" class="no-mg" style="
+          padding-left: 0px;
+          padding-bottom: 5px;
+      ">
+              <ion-icon name="star" class=" checked"></ion-icon>
+              <ion-icon name="star" class=" checked"></ion-icon>
+              <ion-icon name="star" class=" checked"></ion-icon>
+              <ion-icon name="star" class=" uncheck"></ion-icon>
+              <ion-icon name="star" class=" uncheck"></ion-icon>
+            </ion-card-header>
+
+            <ion-card-header *ngIf=" rating == '4'" class="no-mg" style="
+          padding-left: 0px;
+          padding-bottom: 5px;
+      ">
+              <ion-icon name="star" class=" checked"></ion-icon>
+              <ion-icon name="star" class=" checked"></ion-icon>
+              <ion-icon name="star" class=" checked"></ion-icon>
+              <ion-icon name="star" class=" checked"></ion-icon>
+              <ion-icon name="star" class=" uncheck"></ion-icon>
+            </ion-card-header>
+
+            <ion-card-header *ngIf=" rating == '5'" class="no-mg" style="
+            padding-left: 0px;
+            padding-bottom: 5px;
+        ">
+                <ion-icon name="star" class=" checked"></ion-icon>
+                <ion-icon name="star" class=" checked"></ion-icon>
+                <ion-icon name="star" class=" checked"></ion-icon>
+                <ion-icon name="star" class=" checked"></ion-icon>
+                <ion-icon name="star" class=" checked"></ion-icon>
+              </ion-card-header>
+
+            <ion-card-header class="no-mg" style="
+            padding-left: 0px;
+            padding-bottom: 5px;
+        ">
+                <span class="label label-success" style="padding: 3px;">                  
+                    <ion-icon name="md-cash"></ion-icon> {{price}}</span> 
+                
+                    <span class="label label-warning" style="padding: 3px;">                  
+                        <ion-icon name="ios-grid-outline"></ion-icon> {{quatnit}}</span> 
+              </ion-card-header>
+        </ion-item>
+      
+        <img *ngIf=" test == null" src="https://givet.co.uk/backend/web/images/{{image}}">
+        <img *ngIf=" test != null" src="{{image}}">
+
+        <ion-card-content [innerHtml]="info">
+         
+        </ion-card-content>
+
+        <ion-item>
+         <a href="{{link}}" *ngIf="check_link !=null "> <button   ion-button style="background-color: indigo;color: honeydew">View on Amazon</button></a>
+         <a href="{{link}}" *ngIf="check_link ==null " >  <button  ion-button style="background-color: indigo;color: honeydew">View on website</button></a>
+
+        </ion-item>
+      
+        <ion-item (click)="openModal(user_id)" *ngIf="user_email != 'admin@admin.com'">
+          <ion-avatar item-start>
+              <img class="goga" *ngIf=" test != null" src="{{user_image}}">
+              <img class="goga" *ngIf=" test == null" src="https://givet.co.uk/backend/web/images/users/{{user_image}}">
+          </ion-avatar>
+          <h2>{{user_name}} {{user_surename}}</h2>
+          <p>{{user_email}}</p>
+        </ion-item>
+
+
+     
+       
+
+        <ion-item >
+            <button ion-button (click)="share()">Share</button>
+        </ion-item>
+      
+      </ion-card>
+
+</ion-content>

@@ -1,0 +1,79 @@
+<!--
+  Generated template for the FriendsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title >{{soc_friend}}</ion-title>
+   
+    
+  
+  
+   
+  </ion-navbar>
+  
+ </ion-header>
+ 
+  <ion-content>
+
+ 
+      <ion-grid>
+          <ion-row>
+            <ion-col>
+                <button ion-button full (click)="prev()">Twitter</button>
+            </ion-col>
+            <ion-col>
+                <button ion-button full (click)="next()">Facebook</button>
+            </ion-col>
+          </ion-row>
+          
+        </ion-grid>
+  
+      
+  
+      <ion-list >
+
+          <ion-slides #slides>
+              <ion-slide>
+                  <button *ngIf="items2 == null" ion-button class="twitter" (click)="socialLoginTwitter()"><ion-icon name="logo-twitter" style="margin-right: 12px;"></ion-icon> Twitter</button>
+                  <ion-col *ngFor="let item of items2"  no-padding>
+  
+                      <ion-card>
+            
+                          <ion-item>
+                              <ion-avatar item-start>
+                                <img src="{{item.profile_image_url_https}}">
+                              </ion-avatar>
+                             
+                              <h2>{{item.name}}</h2>
+                              <p>Twitter Friend</p>
+                              
+                
+                             
+                              
+                            </ion-item>
+                         
+                        
+              
+                          </ion-card>
+              
+                        </ion-col>
+              </ion-slide>
+
+              <ion-slide>
+
+              
+                <button ion-button *ngIf="fb_soc == null" class="facebook" (click)="socialLoginFB()"><ion-icon name="logo-facebook" style="margin-right: 12px;"></ion-icon> Facebook</button>
+                <h2 *ngIf="fb_soc == 1">No friend to show</h2>
+              </ion-slide>
+
+              
+            </ion-slides>
+  
+          
+      </ion-list >
+  
+  </ion-content>
+  

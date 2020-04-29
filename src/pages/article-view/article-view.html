@@ -1,0 +1,63 @@
+<!--
+  Generated template for the ArticleViewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>{{ (loginData.title | slice:0:25) + (loginData.title.length > 25 ? '...' : '')}}</ion-title>
+  
+     
+    </ion-navbar>
+  
+  </ion-header>
+  
+
+
+<ion-content >
+
+
+    <ion-card >
+        <img *ngIf=" image!=null " src="http://api.givet.co.uk/backend/web/img/categories/{{image}}"/>
+        <img *ngIf="image==null" src="https://givet.co.uk/backend/web/images/default-250x250.png"/>
+        <ion-card-content>
+          <ion-card-title>
+            {{loginData.title}}
+            </ion-card-title>
+
+            <ion-row>
+                <ion-col>
+                  <button ion-button icon-start clear small>
+                    <ion-icon name="md-create"></ion-icon>
+                    <div>admin</div>
+                  </button>
+                </ion-col>
+    
+                <ion-col>
+                    <button ion-button icon-start clear small>
+                      <ion-icon name="md-calendar"></ion-icon>
+                      <div>{{date}}</div>
+                    </button>
+                  </ion-col>
+    
+    
+               
+                
+              </ion-row>
+
+          <p  [innerHtml]="desc">
+           
+          </p>
+        </ion-card-content>
+
+
+        <ion-item >
+            <button ion-button (click)="share()">Share</button>
+        </ion-item>
+    
+       
+      </ion-card>
+
+</ion-content>

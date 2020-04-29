@@ -1,0 +1,7 @@
+{
+  "name": "Givet",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

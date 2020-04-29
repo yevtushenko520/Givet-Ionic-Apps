@@ -1,0 +1,166 @@
+<!--
+  Generated template for the GiftProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>{{set_gift}}</ion-title>
+  
+      
+    </ion-navbar>
+  
+  </ion-header>
+  
+  <ion-content >
+  
+      <ion-list >
+          <ion-item>
+              <ion-icon name="ios-person" ></ion-icon>
+              <ion-label  color="primary" stacked>
+                  {{shoes_eng}}
+              </ion-label>
+
+            
+                <ion-textarea type="text"  [(ngModel)]="loginData.shoes" placeholder="e.g. size,width"></ion-textarea>
+              
+            </ion-item>
+            
+              
+                <ion-item>
+                    <ion-icon name="ios-person" ></ion-icon>
+                    <ion-label  color="primary" stacked>
+                        {{jackets_eng}}
+                    </ion-label>
+                 
+                      <ion-textarea type="text"  [(ngModel)]="loginData.jackets"placeholder="e.g. size,width"></ion-textarea>
+                   
+                  </ion-item>
+                  <ion-item>
+                      <ion-icon name="ios-person" ></ion-icon>
+                      <ion-label  color="primary" stacked>
+                          {{dress_eng}}
+                      </ion-label>
+                    
+                        <ion-textarea type="text"  [(ngModel)]="loginData.dress" placeholder="e.g. size,width"></ion-textarea>
+                      
+                    </ion-item>
+                    <ion-item>
+                        <ion-icon name="ios-person" ></ion-icon>
+                        <ion-label  color="primary" stacked>
+                            {{hat_eng}}
+                        </ion-label>
+                       
+                          <ion-textarea type="text"  [(ngModel)]="loginData.hat" placeholder="e.g. size,width"></ion-textarea>
+                        
+                      </ion-item>
+  
+                      <ion-item>
+                          <ion-icon name="ios-person" ></ion-icon>
+                          <ion-label color="primary" stacked>
+                              {{culture_eng}}
+                          </ion-label>
+                        
+                            <ion-textarea type="text"  [(ngModel)]="loginData.culture" placeholder="e.g. favorite artists,music,venues,and oragnizations you support" rows="4"></ion-textarea>
+                          
+                        </ion-item>
+  
+                        <ion-item>
+                            <ion-icon name="ios-person" ></ion-icon>
+                            <ion-label color="primary" stacked>
+                                {{hobbies_eng}}
+                            </ion-label>
+                            
+                              <ion-textarea type="text"  [(ngModel)]="loginData.hobbies" placeholder="e.g. running , knitting, snow sport, maintaining my 57 Chevy" rows="4"></ion-textarea>
+                           
+                          </ion-item>
+  
+                          
+                        <ion-item>
+                            <ion-icon name="ios-person" ></ion-icon>
+                            <ion-label  color="primary" stacked>
+                                {{what_not_eng}}
+                            </ion-label>
+                          
+                              <ion-textarea  type="text"  [(ngModel)]="loginData.what_not" placeholder="e.g. I am allergic to peanuts, no ties, buy me a vacuum at your own risk" rows="4"></ion-textarea>
+                            
+                          </ion-item>
+  
+  
+                          <ion-grid>
+                              <ion-row>
+  
+                                  <ion-col>
+                          <ion-item>
+                              <ion-icon name="ios-person" ></ion-icon>
+                              <ion-label  color="primary" stacked>
+                                #1
+                              </ion-label>
+                                <ion-textarea type="text" [(ngModel)]="loginData.rand_1" ></ion-textarea>
+                              
+                            </ion-item>
+  
+  
+                          </ion-col>
+  
+                                <ion-col>
+                            
+                            <ion-item>
+                                <ion-icon name="ios-person" ></ion-icon>
+                                <ion-label  color="primary" stacked>
+                                  #2
+                                </ion-label>
+                                  <ion-textarea type="text" [(ngModel)]="loginData.rand_2"  ></ion-textarea>
+                               
+                              </ion-item>
+  
+  
+                            </ion-col>
+                            </ion-row>
+                          </ion-grid>
+  
+  
+                          <ion-grid>
+                              <ion-row>
+  
+                                  <ion-col>
+                              <ion-item>
+                                  <ion-icon name="ios-person" ></ion-icon>
+                                  <ion-label  color="primary" stacked>
+                                    #3
+                                  </ion-label>
+                                    <ion-textarea type="text" [(ngModel)]="loginData.rand_3"  ></ion-textarea>
+                                 
+                                </ion-item>
+                              </ion-col>
+  
+                              <ion-col>
+                                <ion-item>
+                                    <ion-icon name="ios-person" ></ion-icon>
+                                    <ion-label  color="primary" stacked>
+                                      #4
+                                    </ion-label>
+                                      <ion-textarea type="text" [(ngModel)]="loginData.rand_4" ></ion-textarea>
+                                    
+                                  </ion-item>
+                                </ion-col>
+   </ion-row>
+                          </ion-grid>
+  
+  
+                          <ion-item>
+                              <ion-icon name="ios-person" ></ion-icon>
+                              <ion-label  color="primary" stacked>
+                                  {{when_it_eng}}
+                              </ion-label>
+                             
+                                <ion-textarea  type="text" [(ngModel)]="loginData.when_it"  placeholder="e.g. anything else you want to share." rows="4"></ion-textarea >
+                              
+                            </ion-item>
+                            <button ion-button full (click)="save()">{{updates}}</button>     
+      </ion-list >
+  
+  </ion-content>
+  

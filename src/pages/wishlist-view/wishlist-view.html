@@ -1,0 +1,264 @@
+<!--
+  Generated template for the WishlistViewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+
+    <ion-title >{{ (loginData.title | slice:0:15) + (loginData.title.length > 15 ? '...' : '')}}</ion-title>
+
+    <ion-buttons *ngIf=" user_id == user_id_2" end>
+        <button ion-button icon-only (click)="moveToLogin(ids)">
+          <ion-icon name="ios-create-outline"></ion-icon>
+        </button>
+
+        <button ion-button icon-only (click)="presentConfirm(ids)">
+            <ion-icon name="trash" ></ion-icon>
+
+            
+          </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+
+
+    <ion-card>
+
+        <ion-item>
+         
+          <h2 [innerHtml]="title"></h2>
+          <span *ngIf=" type == '0'" class="label label-danger">                  
+            Private</span> 
+            <span *ngIf=" type == '1'" class="label label-warning">                  
+                Shared</span> 
+                <span *ngIf=" type == '2'" class="label label-success">                  
+                    Public</span>  
+        </ion-item>
+      
+
+        <img *ngIf="image != null" src="https://givet.co.uk/backend/web/images/{{image}}"/>
+        <img *ngIf="image == null" src="https://givet.co.uk/backend/web/images/default-250x250.png"/>
+      
+      <ion-card-content><b>{{private_lang}}:</b> </ion-card-content>
+      <ion-card-content [innerHtml]="private"> </ion-card-content>
+
+        <ion-card-content><b>{{desc_lang}}:</b> </ion-card-content>
+
+        <ion-card-content>
+          <p [innerHtml]="description"></p>
+        </ion-card-content>
+      
+        <ion-item (click)="openModal(user_id)" *ngIf="user_email != 'admin@admin.com'">
+            <ion-avatar item-start>
+                <img class="goga" *ngIf=" test != null" src="{{user_image}}">
+                <img class="goga" *ngIf=" test == null && user_image != null" src="https://givet.co.uk/backend/web/images/users/{{user_image}}">
+                <img *ngIf="user_image == null && test == null" src="https://givet.co.uk/backend/web/images/default-250x250.png"/>
+            </ion-avatar>
+            <h2>{{user_name}} {{user_surename}}</h2>
+            <p>{{user_email}}</p>
+          </ion-item>
+
+
+      
+
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-start clear small (click)="like()">
+              <ion-icon *ngIf=" status =='1'" name="thumbs-up" color="secondary"></ion-icon>
+              <ion-icon *ngIf=" status !='1'" name="thumbs-up" ></ion-icon>
+              <div>Like</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-start clear small (click)="dislike()">
+                <ion-icon *ngIf=" status !='0'" name="thumbs-down"  ></ion-icon>
+              <ion-icon *ngIf=" status =='0'" name="thumbs-down"  color="danger"></ion-icon>
+              <div>Dislike</div>
+            </button>
+          </ion-col>
+         
+        </ion-row>
+
+        <ion-item *ngIf=" type == '0'">
+            <button ion-button (click)="share()">Share</button>
+        </ion-item>
+      
+      </ion-card>
+
+      <ion-list>
+
+      <ion-card>
+
+        
+                <div class="item" *ngIf="type != '0' || user_id==user_id_2 ">
+                 
+                    <h2  style="padding: 20px;" float-left>
+                        {{product_lang}} </h2>
+
+                       
+                   
+                       
+
+                      
+              <ion-buttons  style="padding: 10px;" *ngIf=" type == '2' && user_id == user_id_2 || user_id == user_id_2" float-right (click)="openModalFriend()">
+                  <button ion-button icon-only >
+                    <ion-icon name="add"></ion-icon>
+                  </button>
+                  
+                </ion-buttons>
+                  </div>
+    
+         
+                </ion-card>
+     
+                <ion-card >
+              
+                <ion-col *ngFor="let item of items_dota"  no-padding>
+
+                  
+
+                        <ion-item>
+                            <ion-avatar item-start>
+                              <img src="https://givet.co.uk/backend/web/images/{{item.image}}">
+                            </ion-avatar>
+
+                            <h2 (click)="moToView(item)"> {{item.name}}</h2>
+                           
+                          </ion-item>
+                        
+                      
+          
+                        <ion-card-header *ngIf=" item.rating == '0'" class="no-mg">
+          
+          
+          
+                                <ion-icon  name="star" class=" unchecked 1"></ion-icon>
+                                
+                                <ion-icon  name="star" class=" unchecked 2"></ion-icon>
+                                <ion-icon  name="star" class=" unchecked 3"></ion-icon>
+                                <ion-icon  name="star" class=" unchecked 4"></ion-icon>
+                                <ion-icon  name="star" class=" unchecked 5"></ion-icon>
+            
+                                
+                                
+                              </ion-card-header>
+          
+          
+                        <ion-card-header *ngIf=" item.rating == '1'" class="no-mg">
+          
+          
+          
+                            <ion-icon  name="star" class=" checked 1"></ion-icon>
+                            
+                            <ion-icon  name="star" class=" unchecked 2"></ion-icon>
+                            <ion-icon  name="star" class=" unchecked 3"></ion-icon>
+                            <ion-icon  name="star" class=" unchecked 4"></ion-icon>
+                            <ion-icon  name="star" class=" unchecked 5"></ion-icon>
+          
+                            
+                            
+                          </ion-card-header>
+          
+                          <ion-card-header *ngIf=" item.rating == '2'" class="no-mg">
+          
+          
+          
+                                <ion-icon  name="star" class=" checked 1"></ion-icon>
+                                
+                                <ion-icon  name="star" class=" checked 2"></ion-icon>
+                                <ion-icon  name="star" class=" unchecked 3"></ion-icon>
+                                <ion-icon  name="star" class=" unchecked 4"></ion-icon>
+                                <ion-icon  name="star" class=" unchecked 5"></ion-icon>
+            
+                                
+                                
+                              </ion-card-header>
+          
+                              <ion-card-header *ngIf=" item.rating == '3'" class="no-mg">
+          
+          
+          
+                                    <ion-icon  name="star" class=" checked 1"></ion-icon>
+                                    
+                                    <ion-icon  name="star" class=" checked 2"></ion-icon>
+                                    <ion-icon  name="star" class=" checked 3"></ion-icon>
+                                    <ion-icon  name="star" class=" unchecked 4"></ion-icon>
+                                    <ion-icon  name="star" class=" unchecked 5"></ion-icon>
+                
+                                    
+                                    
+                                  </ion-card-header>
+          
+                                  <ion-card-header *ngIf=" item.rating == '4'" class="no-mg">
+          
+          
+          
+                                        <ion-icon  name="star" class=" checked 1"></ion-icon>
+                                        
+                                        <ion-icon  name="star" class=" checked 2"></ion-icon>
+                                        <ion-icon  name="star" class=" checked 3"></ion-icon>
+                                        <ion-icon  name="star" class=" checked 4"></ion-icon>
+                                        <ion-icon  name="star" class=" unchecked 5"></ion-icon>
+                    
+                                        
+                                        
+                                      </ion-card-header>
+          
+                                      <ion-card-header *ngIf=" item.rating == '5'" class="no-mg">
+          
+          
+          
+                                            <ion-icon  name="star" class=" checked 1"></ion-icon>
+                                            
+                                            <ion-icon  name="star" class=" checked 2"></ion-icon>
+                                            <ion-icon  name="star" class=" checked 3"></ion-icon>
+                                            <ion-icon  name="star" class=" checked 4"></ion-icon>
+                                            <ion-icon  name="star" class=" checked 5"></ion-icon>
+                        
+                                            
+                                            
+                                          </ion-card-header>
+          
+                          <ion-card-header class="no-mg" (click)="moToView(item)">
+                              <span class="label label-success">                  
+                                  <ion-icon name="md-cash"></ion-icon> {{item.price}}</span> 
+                              
+                                  <span class="label label-warning">                  
+                                      <ion-icon name="ios-grid-outline"></ion-icon> {{item.quan}}</span> 
+                            </ion-card-header>
+                        
+                      
+                           
+
+                        <ion-card-content (click)="moToView(item)" class="fixline" [innerHtml]="(item.details | slice:0:150) + (item.details.length > 150 ? '...' : '') ">
+                         
+                        </ion-card-content>
+                      
+
+
+                        <ion-card-header class="bot-pd" style="margin-bottom: 7px" *ngIf=" type == '2' && user_id == user_id_2 || user_id == user_id_2">
+                          <button ion-button color="danger" (click)="del(item)">{{delete_lang}}</button>
+                           
+                         </ion-card-header>
+                        
+
+                      
+          
+                </ion-col>
+
+              </ion-card>
+              
+
+              </ion-list>
+
+        
+
+
+</ion-content>

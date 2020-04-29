@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "114192688377",
+    "firebase_url": "https://givet-220516.firebaseio.com",
+    "project_id": "givet-220516",
+    "storage_bucket": "givet-220516.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:114192688377:android:764d2cb7da3280eb",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "114192688377-j76hntpb9qu799pue0esphn5af0c50ar.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyx-Gd88fi6e-LZ8mNdUCF7W4fP7nEpno"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
